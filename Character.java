@@ -12,15 +12,27 @@ public class Character {
     }
 
     public void attack(){
-
+        System.out.println(name+ " is attacking");
     }
 
     public void takeDamage(int damage){
-        
+        if(damage <= 0){
+            System.out.println("Invalid Damage");
+            return;
+        }
+
+        health -= damage;
+        if(health < 0){
+            health = 0;
+        }
+
+        System.out.println(name+ " took " +damage+ " damage");
     }
 
     public void showDetails(){
-
+        System.out.println("name: "+name);
+        System.out.println("health: "+health);
+        System.out.println("level: "+level);
     }
 
     public String getName() {
